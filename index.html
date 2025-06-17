@@ -18,121 +18,62 @@
       text-align: center;
     }
 
-    /* Fondo animado */
-    #particles-js {
+    #animated-bg {
       position: fixed;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background-color: #F2E8E4;
       z-index: -1;
-    }
+      transition: background-color 3s ease;
+  <div id="animated-bg"></div>
 
-    body > .content {
-      padding: 50px;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4em;
-      margin-bottom: 40px;
-      color: #8C3A4A;
-    }
-
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .obra {
-      width: 300px;
-      border-radius: 16px;
-      overflow: hidden;
-      background-color: rgba(250, 218, 221, 0.9);
-      border: 2px solid #D98C5F;
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .obra:hover {
-      transform: scale(1.05);
-    }
-
-    .obra iframe {
-      width: 100%;
-      height: 200px;
-      border: none;
-      display: block;
-    }
-
-    .titulo-obra {
-      padding: 15px;
-      font-size: 1.3em;
-      color: #8C3737;
-      background-color: #F2D888;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Fondo animado -->
-  <div id="particles-js"></div>
-
-  <!-- Contenido principal -->
+  <!-- Contenido -->
   <div class="content">
     <h1>Paisajes Sensibles</h1>
 
     <div class="galeria">
       <div class="obra" onclick="window.open('https://tuusuario.github.io/bruma-suave/', '_blank')">
         <iframe src="https://tuusuario.github.io/bruma-suave/"></iframe>
-        <div class="titulo-obra"> .....</div>
+        <div class="titulo-obra">Bruma Suave</div>
       </div>
 
       <div class="obra" onclick="window.open('https://tuusuario.github.io/susurro-rosado/', '_blank')">
         <iframe src="https://tuusuario.github.io/susurro-rosado/"></iframe>
-        <div class="titulo-obra"> ..... </div>
+        <div class="titulo-obra">Susurro Rosado</div>
       </div>
 
       <div class="obra" onclick="window.open('https://tuusuario.github.io/lluvia-del-crepusculo/', '_blank')">
         <iframe src="https://tuusuario.github.io/lluvia-del-crepusculo/"></iframe>
-        <div class="titulo-obra"> ..... </div>
+        <div class="titulo-obra">Lluvia del Crepúsculo</div>
       </div>
 
       <div class="obra" onclick="window.open('https://tuusuario.github.io/hojas-que-cantan/', '_blank')">
         <iframe src="https://tuusuario.github.io/hojas-que-cantan/"></iframe>
-        <div class="titulo-obra"> .....</div>
+        <div class="titulo-obra">Hojas que Cantan</div>
       </div>
     </div>
   </div>
 
-  <!-- Librería de partículas -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-  <!-- Configuración de partículas -->
+  <!-- Fondo dinámico -->
   <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: 80,
-          density: { enable: true, value_area: 800 }
-        },
-        color: { value: "#D98C5F" },
-        shape: { type: "circle" },
-        opacity: { value: 0.4, random: true },
-        size: { value: 4, random: true },
-        move: { enable: true, speed: 1.5 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" }
-        }
-      }
-    });
-  </script>
+    const colores = [
+      "#F2D888",
+      "#594F32",
+      "#F2E4D8",
+      "#D98C5F",
+      "#F2887E"
+    ];
 
+    let index = 0;
+    const fondo = document.getElementById('animated-bg');
+
+    function cambiarColor() {
+      fondo.style.backgroundColor = colores[index];
+      index = (index + 1) % colores.length;
+    }
+
+    setInterval(cambiarColor, 4000); // cada 4 segundos
+    cambiarColor(); // iniciar
+  </script>
 </body>
 </html>
