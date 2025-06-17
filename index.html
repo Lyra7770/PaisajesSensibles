@@ -5,22 +5,28 @@
   <title>Paisajes Sensibles</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Fondo animado con gradiente */
-    body {
+    html, body {
       margin: 0;
-      padding: 50px;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
       font-family: 'Cormorant Garamond', serif;
       color: #594F32;
       text-align: center;
-      background: linear-gradient(-45deg, #F2E8E4, #FADADD, #F2D888, #D98C5F);
-      background-size: 400% 400%;
-      animation: moverFondo 20s ease infinite;
     }
 
-    @keyframes moverFondo {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #F2E8E4;
+      z-index: -1;
+    }
+
+    body > .content {
+      padding: 50px;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -67,30 +73,76 @@
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
 
-  <h1>Paisajes Sensibles</h1>
+  <div class="content">
+    <h1>Paisajes Sensibles</h1>
 
-  <div class="galeria">
-    <div class="obra" onclick="window.open('https://tuusuario.github.io/bruma-suave/', '_blank')">
-      <iframe src="https://tuusuario.github.io/bruma-suave/"></iframe>
-      <div class="titulo-obra"> .....</div>
-    </div>
+    <div class="galeria">
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/bruma-suave/', '_blank')">
+        <iframe src="https://tuusuario.github.io/bruma-suave/"></iframe>
+        <div class="titulo-obra"> .....</div>
+      </div>
 
-    <div class="obra" onclick="window.open('https://tuusuario.github.io/susurro-rosado/', '_blank')">
-      <iframe src="https://tuusuario.github.io/susurro-rosado/"></iframe>
-      <div class="titulo-obra"> ..... </div>
-    </div>
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/susurro-rosado/', '_blank')">
+        <iframe src="https://tuusuario.github.io/susurro-rosado/"></iframe>
+        <div class="titulo-obra"> ..... </div>
+      </div>
 
-    <div class="obra" onclick="window.open('https://tuusuario.github.io/lluvia-del-crepusculo/', '_blank')">
-      <iframe src="https://tuusuario.github.io/lluvia-del-crepusculo/"></iframe>
-      <div class="titulo-obra"> ..... </div>
-    </div>
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/lluvia-del-crepusculo/', '_blank')">
+        <iframe src="https://tuusuario.github.io/lluvia-del-crepusculo/"></iframe>
+        <div class="titulo-obra"> ..... </div>
+      </div>
 
-    <div class="obra" onclick="window.open('https://tuusuario.github.io/hojas-que-cantan/', '_blank')">
-      <iframe src="https://tuusuario.github.io/hojas-que-cantan/"></iframe>
-      <div class="titulo-obra"> .....</div>
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/hojas-que-cantan/', '_blank')">
+        <iframe src="https://tuusuario.github.io/hojas-que-cantan/"></iframe>
+        <div class="titulo-obra"> .....</div>
+      </div>
     </div>
   </div>
 
+  <!-- particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Configuración de partículas -->
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: "#D98C5F"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.4,
+          random: true
+        },
+        size: {
+          value: 4,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 1.5
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
