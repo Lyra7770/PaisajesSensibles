@@ -5,12 +5,22 @@
   <title>Paisajes Sensibles</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Fondo animado con gradiente */
     body {
-      background-color: #F2E8E4;
-      color: #594F32;
-      font-family: 'Cormorant Garamond', serif;
-      text-align: center;
+      margin: 0;
       padding: 50px;
+      font-family: 'Cormorant Garamond', serif;
+      color: #594F32;
+      text-align: center;
+      background: linear-gradient(-45deg, #F2E8E4, #FADADD, #F2D888, #D98C5F);
+      background-size: 400% 400%;
+      animation: moverFondo 20s ease infinite;
+    }
+
+    @keyframes moverFondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
@@ -30,7 +40,7 @@
       width: 300px;
       border-radius: 16px;
       overflow: hidden;
-      background-color: #FADADD;
+      background-color: rgba(250, 218, 221, 0.9);
       border: 2px solid #D98C5F;
       box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
@@ -54,15 +64,13 @@
       color: #8C3737;
       background-color: #F2D888;
     }
-
   </style>
 </head>
 <body>
 
-  <h1> Paisajes Sensibles </h1>
+  <h1>Paisajes Sensibles</h1>
 
   <div class="galeria">
-
     <div class="obra" onclick="window.open('https://tuusuario.github.io/bruma-suave/', '_blank')">
       <iframe src="https://tuusuario.github.io/bruma-suave/"></iframe>
       <div class="titulo-obra"> .....</div>
@@ -82,7 +90,6 @@
       <iframe src="https://tuusuario.github.io/hojas-que-cantan/"></iframe>
       <div class="titulo-obra"> .....</div>
     </div>
-
   </div>
 
 </body>
