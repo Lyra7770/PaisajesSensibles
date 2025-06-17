@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Paisajes Sensibles</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
@@ -15,6 +18,7 @@
       text-align: center;
     }
 
+    /* Fondo animado */
     #particles-js {
       position: fixed;
       width: 100%;
@@ -30,7 +34,8 @@
     }
 
     h1 {
-      font-size: 3em;
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
       margin-bottom: 40px;
       color: #8C3A4A;
     }
@@ -73,35 +78,58 @@
   </style>
 </head>
 <body>
+
+  <!-- Fondo animado -->
   <div id="particles-js"></div>
 
+  <!-- Contenido principal -->
   <div class="content">
     <h1>Paisajes Sensibles</h1>
 
     <div class="galeria">
       <div class="obra" onclick="window.open('https://tuusuario.github.io/bruma-suave/', '_blank')">
         <iframe src="https://tuusuario.github.io/bruma-suave/"></iframe>
-        <div class="titulo-obra"> .....</div>
+        <div class="titulo-obra">.....</div>
       </div>
 
       <div class="obra" onclick="window.open('https://tuusuario.github.io/susurro-rosado/', '_blank')">
         <iframe src="https://tuusuario.github.io/susurro-rosado/"></iframe>
-        <div class="titulo-obra"> ..... </div>
+        <div class="titulo-obra">.....</div>
       </div>
 
       <div class="obra" onclick="window.open('https://tuusuario.github.io/lluvia-del-crepusculo/', '_blank')">
         <iframe src="https://tuusuario.github.io/lluvia-del-crepusculo/"></iframe>
-        <div class="titulo-obra"> ..... </div>
+        <div class="titulo-obra">.....</div>
       </div>
 
       <div class="obra" onclick="window.open('https://tuusuario.github.io/hojas-que-cantan/', '_blank')">
         <iframe src="https://tuusuario.github.io/hojas-que-cantan/"></iframe>
-        <div class="titulo-obra"> .....</div>
+        <div class="titulo-obra">.....</div>
+      </div>
+
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/ocaso-vibrante/', '_blank')">
+        <iframe src="https://tuusuario.github.io/ocaso-vibrante/"></iframe>
+        <div class="titulo-obra">.....</div>
+      </div>
+
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/eco-dorado/', '_blank')">
+        <iframe src="https://tuusuario.github.io/eco-dorado/"></iframe>
+        <div class="titulo-obra">.....</div>
+      </div>
+
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/sendero-de-luz/', '_blank')">
+        <iframe src="https://tuusuario.github.io/sendero-de-luz/"></iframe>
+        <div class="titulo-obra">.....</div>
+      </div>
+
+      <div class="obra" onclick="window.open('https://tuusuario.github.io/noche-serena/', '_blank')">
+        <iframe src="https://tuusuario.github.io/noche-serena/"></iframe>
+        <div class="titulo-obra">.....</div>
       </div>
     </div>
   </div>
 
-  <!-- particles.js CDN -->
+  <!-- Librería de partículas -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <!-- Configuración de partículas -->
@@ -110,39 +138,21 @@
       particles: {
         number: {
           value: 80,
-          density: {
-            enable: true,
-            value_area: 800
-          }
+          density: { enable: true, value_area: 800 }
         },
-        color: {
-          value: "#D98C5F"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.4,
-          random: true
-        },
-        size: {
-          value: 4,
-          random: true
-        },
-        move: {
-          enable: true,
-          speed: 1.5
-        }
+        color: { value: "#D98C5F" },
+        shape: { type: "circle" },
+        opacity: { value: 0.4, random: true },
+        size: { value: 4, random: true },
+        move: { enable: true, speed: 1.5 }
       },
       interactivity: {
         events: {
-          onhover: {
-            enable: true,
-            mode: "repulse"
-          }
+          onhover: { enable: true, mode: "repulse" }
         }
       }
     });
   </script>
+
 </body>
 </html>
